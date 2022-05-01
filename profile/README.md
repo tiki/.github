@@ -1,45 +1,30 @@
-# Tiki App
+# TIKI (mytiki.com)
 
-*We’re all users and in it together.*
+*The internet is fucked. But, together we can fix it.*
 
 **No** secrets.  **Real** transparency. **Open source** by design.
 
 -----
-#### Our Mission
+### We are on a mission
 
-We’re building a fair, user-centric, decentralized system, giving the users control of their data. 
-It’s **your** data; you deserve the right to see, control, and monetize it. Your data does not belong to corporations, **TIKI included**! 
-We build tools to protect users from exploitation, greed, and carelessness. We build tools to **empower** users.
+to flip the data ecosystem, placing users in charge by enabling them to exercise their data ownership rights, resulting in a new fair market for data.
 
-#### Our values
-- **TRANSPARENCY** helps build trust. Seeing is believing, and nothing is off-limits. No shadowbans or secret algorithms at TIKI.
-- **COMMUNITY** is what connects us. Together, we're an unstoppable force. We expect better. We demand better.
-- **DIVERSITY** is not optional within the walls of TIKI. We're here for our users; we represent our users
-- **SUSTAINABILITY** comes before profit. We work tirelessly to bring lasting positive change to our users' lives.
-- **RELIABILITY** is foundational to trust. We want our users to count on us and aim never to break that trust.
+Users own their data. Businesses safely get the insights they need. TIKI facilitates.
 
-## About Tiki
-### It's **your** data. Get **paid** for it
+### We are building
 
-Your data is worth thousands a year. Why aren’t you getting your fair share? Take back control. Get paid.
+a vertically integrated user data ownership platform that combines data privacy, ownership issuance, and marketplace.
 
-**Tiki’s got your back.**
+### Our values
 
-Why TIKI?
-You think you own your data?
-In 2020 alone, the data on our behaviour and purchases was worth more than $382 billion in advertising revenue.
+A company is much more than its product. We stand by the following values. If we build it right, TIKI will out last us all.
 
-### How does it work?
+- **USER-CENTRIC** How could it be anything else?
+- **TRANSPARENT** Talk is cheap, so we open-sourced EVERYTHING. Accountability.
+- **TRUST** Never take our word for it. Proof is in the pudding.
 
-Link your accounts to the TIKI app and we'll get you paid your fair share.
+### Get Involved
 
-1. **See** what data companies are collecting on you, how its used, and how secure it really is.
-
-2. **Control** who has access to your data and for what purpose. It’s your decision.
-
-3. **Monetize** Get paid your fair share for granting buyers access to your data.
-
-## Contact Us
 Follow us, tweet us, hit us up. Together we're a revolution. 
 
-[Twitter](https://twitter.com/my_tiki_) - [Instagram](https://www.instagram.com/my.tiki/) - [Facebook](https://www.facebook.com/mytikiapp) - [Tiktok](https://www.tiktok.com/@my.tiki?) - [LinkedIn](https://www.linkedin.com/company/mytiki/) - [Discord](https://discord.com/invite/evjYQq48Be) - [Telegram](https://t.me/mytikiapp) - [Signal](https://signal.group/#CjQKIA66Eq2VHecpcCd-cu-dziozMRSH3EuQdcZJNyMOYNi5EhC0coWtjWzKQ1dDKEjMqhkP)
+[Twitter](https://twitter.com/my_tiki_) - [Instagram](https://www.instagram.com/my.tiki/) - [Facebook](https://www.facebook.com/mytikiapp) - [Tiktok](https://www.tiktok.com/@my.tiki?) - [LinkedIn](https://www.linkedin.com/company/mytiki/) - [Discord](https://discord.com/invite/evjYQq48Be) - [Substack](https://blog.mytiki.com)
