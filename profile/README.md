@@ -25,6 +25,8 @@ A company is much more than its product. We stand by the following values. If we
 
 ### Get Involved
 
+[Contibutor Guide](https://github.com/tiki/.github/blob/main/profile/CONTRIBUTE.md)
+
 Follow us, tweet us, hit us up. Together we're a revolution. 
 
 [Twitter](https://twitter.com/my_tiki_) - [Instagram](https://www.instagram.com/my.tiki/) - [Facebook](https://www.facebook.com/mytikiapp) - [Tiktok](https://www.tiktok.com/@my.tiki?) - [LinkedIn](https://www.linkedin.com/company/mytiki/) - [Discord](https://discord.com/invite/evjYQq48Be) - [Substack](https://blog.mytiki.com)
