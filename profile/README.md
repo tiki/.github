@@ -46,7 +46,7 @@ Our DEX is a growing collection of SDKs, APIs, and templates to help you quickly
 *Launching end of October 🚀. Stay Tuned!*
 
 ## 🧑‍💻 Work in Progress.  
-We prioritize **user-centricity, transparency, and trust** above all else.  
+We prioritize **user-centricity, transparency, and trust** above all else. 
 
 #### SDK(s)
 The primary method for using TIKI. Refer to platform-specific SDKs for supported features and docs. 
@@ -61,7 +61,7 @@ Services to support the TIKI blockchain (Layer 1) —most commonly used in inter
 - **LT Block Storage**: [l0-storage](https://github.com/tiki/l0-storage) - Provides long-term (10+ years) immutable (WORM) low-frequency read block storage in a cloud-hosted bucket. 
 
 #### Mobile App
-Built for people to take data ownership a step further. More control, more transparency, and more compensation.
+For people to take data ownership a step further. More control, more transparency, and more compensation.
 
 - **App:** [app](https://github.com/tiki/app)
 - **Supporting Libs:** [data](https://github.com/tiki/data), [strategy_microsoft](https://github.com/tiki/strategy_microsoft), [strategy_google](https://github.com/tiki/strategy_google), [login](https://github.com/tiki/login), [httpp](https://github.com/tiki/httpp), [wallet](https://github.com/tiki/wallet), [syncchain](https://github.com/tiki/syncchain),[user_account](https://github.com/tiki/user_account), [decision](https://github.com/tiki/decision), [info_carousel](https://github.com/tiki/info_carousel), [style](https://github.com/tiki/style), [localchain](https://github.com/tiki/localchain), [localgraph](https://github.com/tiki/localgraph), [money](https://github.com/tiki/money), [tiki_kv](https://github.com/tiki/tiki_kv), [spam_card](https://github.com/tiki/spam_card), [zendesk_flutter](https://github.com/tiki/zendesk_flutter), [upvoty](https://github.com/tiki/upvoty)
@@ -76,7 +76,7 @@ Contextual, anonymous data pooling using knowledge graphs with weighted edges (#
 ## 👋 Get Involved
 
 Care about decentralizing data ownership?  
-*Or, as we like to put it "unfucking the internet."*
+*Or, as we like to put it, "unfucking the internet."*
 
 🌐 [mytiki.com](https://mytiki.com)  
 👾 [discord.gg/tiki](https://discord.gg/tiki)  
@@ -102,6 +102,6 @@ Care about decentralizing data ownership?
 
 ### 🍹 Backed By
 - [11 Tribes Ventures](https://11tribes.vc), [LAGO Innovation Fund](https://www.lagoinnovation.com), Long Run Capital, JoinForces Ventures, [1121.vc](https://1121.vc)
-- Jim O'Neill, Deven Sharma, Ken Rapp, Kashish Mittal, Rikesh Govan, and so many more amazing individuals.
+- Jim O'Neill, Deven Sharma, Ken Rapp, Kashish Mittal, Rikesh Govan, and many more amazing individuals.
 
-*Apologies if we left you off the list. It almost certainly was accidental 🙃.*
+*Apologies if we left you off the list. It was almost certainly accidental 🙃.*
