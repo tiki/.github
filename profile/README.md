@@ -64,14 +64,14 @@ Services to support the TIKI blockchain (Layer 1) —most commonly used in inter
 For people to take data ownership a step further. More control, more transparency, and more compensation.
 
 - **App:** [app](https://github.com/tiki/app)
-- **Supporting Libs:** [data](https://github.com/tiki/data), [strategy_microsoft](https://github.com/tiki/strategy_microsoft), [strategy_google](https://github.com/tiki/strategy_google), [login](https://github.com/tiki/login), [httpp](https://github.com/tiki/httpp), [wallet](https://github.com/tiki/wallet), [syncchain](https://github.com/tiki/syncchain),[user_account](https://github.com/tiki/user_account), [decision](https://github.com/tiki/decision), [info_carousel](https://github.com/tiki/info_carousel), [style](https://github.com/tiki/style), [localchain](https://github.com/tiki/localchain), [localgraph](https://github.com/tiki/localgraph), [money](https://github.com/tiki/money), [tiki_kv](https://github.com/tiki/tiki_kv), [spam_card](https://github.com/tiki/spam_card), [zendesk_flutter](https://github.com/tiki/zendesk_flutter), [upvoty](https://github.com/tiki/upvoty)
-- **Backend Services**: [bouncer](https://github.com/tiki/bouncer)
+- **Supporting Libs:** [app-data](https://github.com/tiki/app-data), [app-strategy-msft](https://github.com/tiki/app-strategy-msft), [app-strategy-goog](https://github.com/tiki/app-strategy-goog), [app-login](https://github.com/tiki/app-login), [dart-httpp](https://github.com/tiki/dart-httpp), [app-wallet](https://github.com/tiki/app-wallet), [app-syncchain](https://github.com/tiki/app-syncchain), [app-account](https://github.com/tiki/app-account), [app-decision](https://github.com/tiki/app-decision), [app-carousel](https://github.com/tiki/app-carousel), [app-style](https://github.com/tiki/app-style), [app-localchain](https://github.com/tiki/app-localchain), [app-localgraph](https://github.com/tiki/app-localgraph), [app-money](https://github.com/tiki/app-money), [flutter-kv](https://github.com/tiki/flutter-kv), [app-spam-card](https://github.com/tiki/app-spam-card), [flutter-zendesk](https://github.com/tiki/flutter-zendesk), [flutter-upvoty](https://github.com/tiki/flutter-upvoty)
+- **Backend Services**: [app-bouncer](https://github.com/tiki/app-bouncer)
 
 #### Data Pools
 Contextual, anonymous data pooling using knowledge graphs with weighted edges (# of users). The objective is to combine multi-user data for licensing while protecting the privacy of originators (without synthetics or noise).
 
-- **Knowledge Graph**: [kgraph](https://github.com/tiki/kgraph)
-- **Ingestion Breakers** [ingest](https://github.com/tiki/ingest)
+- **Knowledge Graph**: [pool-kgraph](https://github.com/tiki/pool-kgraph)
+- **Ingestion Breakers** [pool-ingest](https://github.com/tiki/pool-ingest)
 
 ## 👋 Get Involved
 
