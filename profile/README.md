@@ -51,6 +51,10 @@ We prioritize **user-centricity, transparency, and trust** above all else.
 #### SDK(s)
 The primary method for using TIKI. Refer to platform-specific SDKs for supported features and docs. 
 
+- **Android**: [tiki-sdk-android](https://github.com/tiki/tiki-sdk-android) - Dart SDK compiled to machine code combined with platform-specific storage and a native Kotlin API. Just add to your build.gradle.  
+
+- **iOS**: [tiki-sdk-ios](https://github.com/tiki/tiki-sdk-ios) - Dart SDK compiled to machine code combined with platform-specific storage and a native Swift API. Just add to your podfile.
+
 - **Flutter**: [tiki-sdk-flutter](https://github.com/tiki/tiki-sdk-flutter) - Combines Dart SDK with Flutter-specific storage libs. Just add to your pubspec.
 
 - **Dart**: [tiki-sdk-dart](https://github.com/tiki/tiki-sdk-dart) - Core implementation including blockchain (assembler, validator, wallet, etc.), ownership minting, and consent handling. Used by Flutter, iOS, and Android SDKs.
