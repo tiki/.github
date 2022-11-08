@@ -92,8 +92,10 @@ Care about decentralizing data ownership?
 
 - Tiki Mike ([@mike-audi](https://github.com/mike-audi)) - Founder & CEO 
 - Shane Faria ([@sfaria27](https://github.com/sfaria27)) - Co-founder & Head of Content
-- Blockchain Barry ([@BOC111](https://github.com/BOC111)) - Governance
+- Blockchain Barry ([@BOC111](https://github.com/BOC111)) - Governance Lead
 - Ricardo Gonçalves ([@ricardobrg](https://github.com/ricardobrg)) - Mobile Lead
+- Vignesh Sanathkumar ([@Vigneshsanath](https://github.com/vigneshsanath) - Product Design
+- Tim O'Guin ([@timoguin](https://github.com/timoguin) - Dev Communities
 
 **We're hiring:** [angel.co/company/mytiki/jobs](https://angel.co/company/mytiki/jobs)
 
