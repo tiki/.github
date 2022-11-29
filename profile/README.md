@@ -1,4 +1,4 @@
-### [🍍 Home](https://mytiki.com) &nbsp;|&nbsp; [📚 Docs](https://docs.mytiki.com) &nbsp;|&nbsp; [🎙️ Blog](https://blog.mytiki.com) &nbsp;|&nbsp; [👾 Discord](https://discord.gg/tiki)
+###  [🍍 Console](https://console.mytiki.com) &nbsp; ⏐ &nbsp; [📚 Docs](https://docs.mytiki.com)
 
 # TIKI: choose better data   
 
@@ -21,47 +21,52 @@ with managed consent and an immutable audit trail.
 zero, first, and third-party data (legally), with automated provenance and ownership rights.   
 *third-party data coming soon.*  
 
----
+&nbsp;
 
 ### ⛔️ All-encompassing ToS don't cut it anymore. 
 [People](https://www.cisco.com/c/dam/en_us/about/doing_business/trust-center/docs/cisco-consumer-privacy-survey-2022.pdf) expect more transparency, control, and compensation for their data. Privacy requirements are piling up and opt-in rates [plummetting](https://www.flurry.com/blog/att-opt-in-rate-monthly-updates/) for businesses.
 
 The thing is, less data isn't the answer...  `less data = worse products & services`
 
----
+&nbsp;
 
+![divider](https://user-images.githubusercontent.com/3769672/204665091-4e7f3f18-07b8-4803-b7b5-40bd4ba6745a.png)
+
+&nbsp;
 ### 🧙‍♂️ Get Started
 Our DEX is a growing collection of SDKs, APIs, and templates to help you quickly build the features you want and get the data you need. **No expertise in data, privacy, or crypto needed** (but if you have some, everything is open source, throw us a PR).
-
-### [Peep the Docs →](https://docs.mytiki.com)  
-We have getting-started guides, API references, recipes, examples, and more.
 
 #### SDK(s)
 The primary method for using TIKI. As decentralized infrastructure, the vast majority of it runs at the edge. Hence SDKs —cloud APIs are so 2015 😝.
 
-- **Android**: [tiki-sdk-android](https://github.com/tiki/tiki-sdk-android) - Dart SDK compiled to machine code combined with platform-specific storage and a native Kotlin API. Just add to your build.gradle.  
+- **Android**: [tiki-sdk-android](https://github.com/tiki/tiki-sdk-android) ⏐ [guide](https://docs.mytiki.com/docs/tiki-sdk-android-getting-started) ⏐ Dart SDK compiled to machine code combined with platform-specific storage and a native Kotlin API. Just add to your build.gradle.
 
 
 
-- **iOS**: [tiki-sdk-ios](https://github.com/tiki/tiki-sdk-ios) - Dart SDK compiled to machine code combined with platform-specific storage and a native Swift API. Just add to your podfile.
+- **iOS**: [tiki-sdk-ios](https://github.com/tiki/tiki-sdk-ios) ⏐ [guide](https://docs.mytiki.com/docs/tiki-sdk-ios-getting-started) ⏐ Dart SDK compiled to machine code combined with platform-specific storage and a native Swift API. Just add to your podfile.
 
 
 
-- **Flutter**: [tiki-sdk-flutter](https://github.com/tiki/tiki-sdk-flutter) - Combines Dart SDK with Flutter-specific storage libs. Just add to your pubspec.
+- **Flutter**: [tiki-sdk-flutter](https://github.com/tiki/tiki-sdk-flutter) ⏐ [guide](https://docs.mytiki.com/docs/tiki-sdk-flutter-getting-started) ⏐ Combines Dart SDK with Flutter-specific storage libs. Just add to your pubspec.
 
 
 
-- **Dart**: [tiki-sdk-dart](https://github.com/tiki/tiki-sdk-dart) - Core implementation including blockchain (assembler, validator, wallet, etc.), ownership minting, and consent handling. Used by Flutter, iOS, and Android SDKs.
+- **Dart**: [tiki-sdk-dart](https://github.com/tiki/tiki-sdk-dart) ⏐ [guide](https://docs.mytiki.com/docs/tiki-sdk-dart-getting-started) ⏐ Core implementation including blockchain (assembler, validator, wallet, etc.), ownership minting, and consent handling. Used by Flutter, iOS, and Android SDKs.
 
 #### Layer 0
 Services to support the TIKI DEX. You rarely, if ever, need to interact with these systems directly; our SDKs take care of it all for you.
 
-- **LT Storage**: [l0-storage](https://github.com/tiki/l0-storage) - Provides long-term (10+ years) immutable (WORM) low-frequency read block backup in a cloud-hosted bucket.
+- **LT Storage**: [l0-storage](https://github.com/tiki/l0-storage) ⏐ Provides long-term (10+ years) immutable (WORM) low-frequency read block backup in a cloud-hosted bucket.
 
 
 
-- **Auth**: [l0-auth](https://github.com/tiki/l0-auth) - OAuth2 (using JWTs) style authorization provisioning access to TIKI's L0 services. 
+- **Auth**: [l0-auth](https://github.com/tiki/l0-auth) ⏐ OAuth2 (using JWTs) style authorization provisioning access to TIKI's L0 services. 
 
+&nbsp;
+
+![divider](https://user-images.githubusercontent.com/3769672/204665091-4e7f3f18-07b8-4803-b7b5-40bd4ba6745a.png)
+
+&nbsp;
 ### 🤖 How it works
  
 TIKI is a **decentralized data exchange** (DEX) backed by novel ⛓ [blockchain tech](https://github.com/tiki/.github/blob/main/profile/WHITEPAPER-2CHAINZ.md), purpose-built for data ownership. 
@@ -82,6 +87,11 @@ The basics:
 
 *No significant compute, network, or storage overhead. No change to existing backend systems required. Anonymous to TIKI.*
 
+&nbsp;
+
+![divider](https://user-images.githubusercontent.com/3769672/204665091-4e7f3f18-07b8-4803-b7b5-40bd4ba6745a.png)
+
+&nbsp;
 ### 🍍Team  
 *Those who have a 'why' to live, can bear with almost any 'how'* —Nietzsche via Frankl.  
 
@@ -108,6 +118,9 @@ The basics:
 *Apologies if we left you off the list. It was almost certainly accidental 🙃.*
 
 ### More TIKI
+- **🎙️ [blog](https://blog.mytiki.com)**
+- **👾 [discord](https://discord.gg/tiki)**
 - **🐦 [@my_tiki_](https://twitter.com/my_tiki_)** 
+- **⚡️ [uptime](https://status.mytiki.com)**
 - **🍹 [tiki-bar](https://github.com/tiki-bar)**: R&D projects (very experimental).
 - **⚰️ [tiki-archive](https://github.com/tiki-archive)**: Sunset repos
