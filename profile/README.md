@@ -69,7 +69,7 @@ Services to support the TIKI DEX. You rarely, if ever, need to interact with the
 &nbsp;
 ### 🤖 How it works
  
-TIKI is a **decentralized data exchange** (DEX) backed by novel ⛓ [blockchain tech](https://github.com/tiki/.github/blob/main/profile/WHITEPAPER-2CHAINZ.md), purpose-built for data ownership. 
+TIKI is a **decentralized data exchange** (DEX) backed by novel ⛓ [blockchain tech](https://github.com/tiki/tiki-sdk-dart/blob/main/WHITEPAPER.md), purpose-built for data ownership. 
 
 Add direct people-to-business data trade to existing applications —meeting privacy requirements and maximizing data flow.
 
