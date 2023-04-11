@@ -1,7 +1,10 @@
 <div align="center">
      <a href="https://mytiki.com">
-         <img alt="TIKI" src="https://cdn.mytiki.com/assets/icon-logo.svg"
-         style="height:7em; width:100%;">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://cdn.mytiki.com/assets/icon-logo-dark.svg">
+            <source media="(prefers-color-scheme: light)" srcset="https://cdn.mytiki.com/assets/icon-logo.svg">
+            <img alt="TIKI" src="https://cdn.mytiki.com/assets/icon-logo.svg" style="height:7em; width:100%;">
+          </picture>
      </a>
      <p align="center"><h1>Consumer Data Licensing<br></br></h1></div>
  </div>
