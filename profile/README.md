@@ -6,7 +6,7 @@
             <img alt="TIKI" src="https://cdn.mytiki.com/assets/icon-logo.svg" style="height:7em; width:100%;">
           </picture>
      </a>
-     <p align="center"><h1>Consumer Data Licensing<br></br></h1></div>
+     <p align="center"><h1>Zero-party Data<br></br></h1></div>
  </div>
 
 **Infrastructure to license data from YOUR users** —increase opt-ins, maintain compliance, create revenue streams, train algorithms, and more. Learn more (or get started) at 🌴 **[mytiki.com →](https://mytiki.com).**
