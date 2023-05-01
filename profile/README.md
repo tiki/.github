@@ -6,10 +6,12 @@
             <img alt="TIKI" src="https://cdn.mytiki.com/assets/icon-logo.svg" style="height:7em; width:100%;">
           </picture>
      </a>
-     <p align="center"><h1>Zero-party Data<br></br></h1></div>
+     <p align="center"><h1>Zero-party Data Governance<br></br></h1></div>
  </div>
 
-**Infrastructure to license data from YOUR users** —increase opt-ins, maintain compliance, create revenue streams, train algorithms, and more. Learn more (or get started) at 🌴 **[mytiki.com →](https://mytiki.com).**
+[![Discord](https://img.shields.io/discord/798602279871184906)](https://discord.gg/tiki)
+
+**License, manage, and add ZPD to any stack** —unlock value in your user-base. Join hundreds of developers building data programs people love at 🌴 **[mytiki.com →](https://mytiki.com).**
 
 ### ♡ OSS 
 We're 100% open source & effectively run the whole company here on GitHub.
