@@ -101,3 +101,4 @@ branches:
         bypass_pull_request_allowances: null
 
       restrictions: null # Add a list of teams or apps that are permitted to push to the branch
+
