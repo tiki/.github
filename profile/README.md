@@ -6,7 +6,7 @@
             <img alt="TIKI" src="https://cdn.mytiki.com/assets/icon-logo.svg" style="height:7em; width:100%;">
           </picture>
      </a>
-     <p align="center"><h1>Zero-party Data Governance<br></br></h1></p>
+     <p align="center"><h1>Zero-party Data Monetization<br></br></h1></p>
  </div>
 
 <p align="center">
