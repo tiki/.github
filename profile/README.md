@@ -16,18 +16,16 @@
 <a href="https://github.com/tiki/core" alt="Stars"> <img src="https://img.shields.io/github/stars/tiki?logo=github&color=181717"></a>
 <a href="https://discord.gg/tiki" alt="Discord"><img src="https://img.shields.io/discord/798602279871184906?color=7289da&logo=discord&logoColor=white"></a>
 </p>
+<p align="center">Create reward programs users ♡ to get the data you want.</p><br />
 
-**License, manage, and add ZPD to any stack** —unlock value in your user-base. Join hundreds of developers building data programs people love at 🌴 **[mytiki.com →](https://mytiki.com).**
+TIKI is a data platform built for zero-party data (ZPD) **—data willingly and intentionally shared by users**. TIKI combines consent with reward programs to create user-level data licenses. ZPD is pooled across users and companies with strict data license enforcement creating safe, usable cleanrooms. 
+
+![Platform structure](https://user-images.githubusercontent.com/3769672/249287911-368993e5-fe3b-4b1f-94ae-3a4b59bd8090.png)
+
+🌴 We refer to it as _data monetization_ because each step along the way requires value creation, from user origination to final destination. Join hundreds of developers and companies building ZPD programs people love at **[mytiki.com →](https://mytiki.com)**
+
 
 ### ♡ OSS 
-We're 100% open source & effectively run the whole company here on GitHub.
+We're 100% open source —if you'd like to get involved, we'd love to have you!  
 
-#### Repository overview
-* **SDKs:** `tiki-sdk-<platform>`. Native libraries for using and building on TIKI. **[📚 Overview →](https://mytiki.com/docs/sdk-overview)**
-* **L0 Services:** `l0-<purpose>`. Cloud services for backend use and consumption of data licenses. **[📘 API →](https://mytiki.com/reference/getting-started)**
-* Other: Code for things like our [quickstart guide](https://mytiki.com/docs/quickstart) and [console webapp](https://console.mytiki.com)
-
-#### Contribute
-If you'd like to get involved, we'd love to have you!  
-
-Often, the best place to start is with **any open Issues** in a repo that catches your eye. Everything you need to get started should be in the repo. If you have questions, are looking for some help, want to chat with our team, other contributors, or kick around feature ideas, pop in our 👾 **[Discord](https://discord.gg/tiki)** and say 👋 hi.
+Often, the best place to start is with any open Issues in a repo that catches your eye. Everything you need to get started should be in the repo. If you have questions, are looking for some help, want to chat with our team and contributors, or discuss feature ideas, pop in our 👾 **[Discord](https://discord.gg/tiki)** and say 👋 hi.
