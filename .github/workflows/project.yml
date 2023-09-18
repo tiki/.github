@@ -2,9 +2,6 @@ name: Project
 
 on:
   workflow_call:
-    secrets:
-      GH_PROJECT_PAT:
-        required: true
 
 jobs:
   check-secret:
