@@ -69,10 +69,10 @@ labels:
     description: This issue or pull request already exists.
   - name: late
     color: FBCA04
-    description: This issue is behind schedule.
+    description: The milestone is behind schedule.
   - name: ms
     color: FFFFFF
-    description: Indicates this issue is a milestone.
+    description: This issue is a milestone.
 
 branches:
   - name: main
