@@ -50,7 +50,7 @@ labels:
   - name: fix
     color: 91CA55
     description: Iterations on existing features or infrastructure.
-    
+
   - name: security
     color: D73A4A
     description: Something is vulnerable or not secure.
@@ -62,6 +62,14 @@ labels:
   - name: duplicate
     color: CFD3D7
     description: This issue or pull request already exists.
+
+  - name: late
+    color: FBCA04
+    description: This issue is behind schedule.
+
+  - name: ms
+    color: FFFFFF
+    description: Indicates this issue is a milestone.
 
 branches:
   - name: main
