@@ -1,9 +1,10 @@
 name: Project
 
 on:
-  pull_request:
-    types:
-      - opened
+  workflow_call:
+    secrets:
+      GH_PROJECT_PAT:
+        required: true
 
 jobs:
   check-secret:
