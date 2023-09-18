@@ -1,72 +1,75 @@
+# Reference: https://github.com/repository-settings/app
+
+repository:
+  private: false
+  has_issues: true
+  has_projects: false
+  has_wiki: false
+  has_downloads: true
+  default_branch: main
+  allow_squash_merge: true
+  allow_merge_commit: true
+  allow_rebase_merge: true
+  delete_branch_on_merge: true
+  enable_automated_security_fixes: true
+  enable_vulnerability_alerts: true
+
+teams:
+  - name: infrastructure
+    permission: admin
+
 labels:
   - name: breaking
     color: D73A4A
     description: Introduces a breaking change.
-
   - name: 'good first issue'
     color: 7057FF
     description: Good for newcomers.
-
   - name: help
     color: 0E8A16
     description: Requires help to resolve.
-
   - name: 'priority: now'
     color: D73A4A
     description: Stop what you're doing and fix it, now.
-
   - name: 'priority: soon'
     color: FFB8C6
     description: Critical, requires work ASAP.
-
   - name: 'priority: 2day'
     color: FBCA04
     description: Priority this task above others.
-
   - name: blocked
     color: D73A4A
     description: Something is blocking this.
-
   - name: bug
     color: FFB8C6
     description: Something isn't working.
-
   - name: chore
     color: FEF2C0
     description: Naming, organizing folder structure, and less impactful tasks.
-
   - name: discuss
     color: D4C5F9
     description: Questions, proposals and info that requires discussion.
-
   - name: docs
     color: FEF2C0
     description: Related to documentation and information.
-
   - name: feature
     color: 5EBEFF
     description: Brand new functionality, features, pages, workflows, endpoints, etc.
-
   - name: fix
     color: 91CA55
     description: Iterations on existing features or infrastructure.
-
   - name: security
     color: D73A4A
     description: Something is vulnerable or not secure.
-
   - name: testing
     color: 64CFDB
     description: Related to testing.
-
   - name: duplicate
     color: CFD3D7
     description: This issue or pull request already exists.
-
   - name: late
     color: FBCA04
     description: This issue is behind schedule.
-
   - name: ms
     color: FFFFFF
     description: Indicates this issue is a milestone.
@@ -74,11 +77,6 @@ labels:
 branches:
   - name: main
     protection:
-      # Settings correspond to the request body for GitHub's "Update branch protection" API:
-      #
-      #   https://docs.github.com/en/rest/branches/branch-protection?apiVersion=2022-11-28#update-branch-protection
-      #
-
       allow_deletions: false
       allow_force_pushes: false
       allow_fork_syncing: null # Only applies to fork repos
@@ -87,26 +85,16 @@ branches:
       lock_branch: false
       required_conversation_resolution: true
       required_linear_history: false
-
       required_status_checks:
         strict: true
         contexts: [] # TODO: Add required status checks here
-
-        # According to docs, "contexts" is both deprecated AND required, but checks are going to be
-        # the preferred method going forward. Come back to these. Maybe once we have our own GH Apps.
-        #
-        # checks:
-        #   - app_id: 123456
-        #     context: CHECK-NAME
-
       required_pull_request_reviews:
         dismissal_restrictions:
-          teams: ["core-development"]
+          teams: ["infrastructure"]
         dismiss_stale_reviews: true
         require_code_owner_reviews: true
         require_last_push_approval: true
         required_approving_review_count: 1
         bypass_pull_request_allowances: null
-
-      restrictions: null # Add a list of teams or apps that are permitted to push to the branch
+      restrictions: null
 
