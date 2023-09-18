@@ -1,0 +1,44 @@
+name: Project
+
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  check-secret:
+    runs-on: ubuntu-latest
+    outputs:
+      pat: ${{ steps.pat-check.outputs.defined }}
+    steps:
+      - name: Check PAT
+        id: pat-check
+        shell: bash
+        run: |
+          if [ "${{ secrets.GH_PROJECT_PAT }}" != '' ]; then
+            echo "defined=true" >> $GITHUB_OUTPUT;
+          else
+            echo "defined=false" >> $GITHUB_OUTPUT;
+          fi
+
+  add-pr:
+    if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' && needs.check-secret.outputs.pat == 'true'}}
+    name: Add pull request to project
+    runs-on: ubuntu-latest
+    needs: [check-secret]
+    steps:
+      - name: Add to project
+        uses: actions/add-to-project@v0.5.0
+        with:
+          project-url: https://github.com/orgs/tiki/projects/1
+          github-token: ${{ secrets.GH_PROJECT_PAT }}
+        id: add-project
+
+      - name: Add to sprint
+        uses: titoportas/update-project-fields@v0.1.0
+        with:
+          project-url: https://github.com/orgs/tiki/projects/1
+          github-token: ${{ secrets.GH_PROJECT_PAT }}
+          item-id: ${{ steps.add-project.outputs.itemId }}
+          field-keys: Status
+          field-values: In Progress
