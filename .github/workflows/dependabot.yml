@@ -1,36 +1,39 @@
 name: Dependabot
 
-on: push
+on:
+  push:
+#  schedule:
+#    - cron: "0 5 * * 1"
 
-permissions:
-  issues: write
+env:
+  ORG: tiki
 
 jobs:
-#  get-org-repos:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: austenstone/get-org-repos@main
-#        with:
-#          github-token: ${{ secrets.GITHUB_TOKEN }}
-#          org: ${{ github.context.repo.owner }}
-#        id: get-org-repos
-#    outputs:
-#      repos: ${{ steps.get-org-repos.outputs.repos }}
+  get-org-repos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: austenstone/get-org-repos@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          org: ${{ env.ORG }}
+        id: get-org-repos
+    outputs:
+      repos: ${{ steps.get-org-repos.outputs.repos }}
 
   check-prs:
-#    needs: [ get-org-repos ]
+    needs: [ get-org-repos ]
     runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        repo: ${{ fromJson(needs.get-org-repos.outputs.repos) }}
-#      fail-fast: false
+    strategy:
+      matrix:
+        repo: ${{ fromJson(needs.get-org-repos.outputs.repos) }}
+      fail-fast: false
     outputs:
       prs: ${{ steps.dependabot-prs.outputs.prs }}
     steps:
       - name: Get Dependabot PRs
         id: dependabot-prs
         run: |
-          echo "prs=$(gh pr list -R tiki/core-iceberg-metadata -A app/dependabot --json title,url)" >> $GITHUB_OUTPUT
+          echo "prs=$(gh pr list -R ${{ env.ORG }}/${{ matrix.repo }} -A app/dependabot --json title,url)" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ secrets.GH_PROJECT_PAT }}
 
@@ -53,5 +56,5 @@ jobs:
           title: Review Dependabot PR
           body: ${{ steps.table.outputs.table }}
           labels: chore
-          repo: core-iceberg-metadata
-          owner: tiki
+          repo: ${{ matrix.repo }}
+          owner: ${{ env.ORG }}
