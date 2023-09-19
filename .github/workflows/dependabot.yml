@@ -36,7 +36,7 @@ jobs:
         uses: buildingcash/json-to-markdown-table-action@v1
         id: body
         with:
-          json: ${{ fromJson(steps.dependabot-prs.outputs.prs) }}
+          json: ${{ steps.dependabot-prs.outputs.prs }}
 
       - run: |
           echo ${{ steps.table.outputs.body }}
