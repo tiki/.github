@@ -1,9 +1,8 @@
 name: Dependabot
 
 on:
-  push:
-#  schedule:
-#    - cron: "0 5 * * 1"
+  schedule:
+    - cron: "0 5 * * 1"
 
 env:
   ORG: tiki
@@ -27,8 +26,6 @@ jobs:
       matrix:
         repo: ${{ fromJson(needs.get-org-repos.outputs.repos) }}
       fail-fast: false
-    outputs:
-      prs: ${{ steps.dependabot-prs.outputs.prs }}
     steps:
       - name: Get Dependabot PRs
         id: dependabot-prs
