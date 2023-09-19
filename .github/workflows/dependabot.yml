@@ -43,7 +43,7 @@ jobs:
         uses: buildingcash/json-to-markdown-table-action@v1
         id: table
         with:
-          json: ${{ needs.check-prs.outputs.prs }}
+          json: ${{ fromJson(needs.check-prs.outputs.prs) }}
 
       - name: Print Table
         run: echo ${{ steps.table.outputs.body }}
@@ -58,17 +58,12 @@ jobs:
           labels: chore
           repo: core-iceberg-metadata
           owner: tiki
-
-      - name: Issue Number
-        id: issue-number
-        run: |
-          echo ${{ steps.new-issue.outputs.number }}
-
-#      - name: Add to project
-#        uses: monry/actions-add-issue-to-project@v2
-#        with:
-#          github-token: ${{ secrets.GH_PROJECT_PAT }}
-#          project-owner: ${{ github.context.repo.owner }}
-#          project-number: 1
-#          issue-repository: core-iceberg-metadata
-#          issue-number: ${{ steps.issue-number.outputs.number }}
+          
+      - name: Add to project
+        uses: monry/actions-add-issue-to-project@v2
+        with:
+          github-token: ${{ secrets.GH_PROJECT_PAT }}
+          project-owner: ${{ github.context.repo.owner }}
+          project-number: 1
+          issue-repository: core-iceberg-metadata
+          issue-number: ${{ steps.new-issue.outputs.number }}
