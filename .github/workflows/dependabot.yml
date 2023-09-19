@@ -1,0 +1,57 @@
+name: Dependabot
+
+on: push
+
+permissions:
+  issues: write
+
+jobs:
+#  get-org-repos:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: austenstone/get-org-repos@main
+#        with:
+#          github-token: ${{ secrets.GITHUB_TOKEN }}
+#          org: ${{ github.context.repo.owner }}
+#        id: get-org-repos
+#    outputs:
+#      repos: ${{ steps.get-org-repos.outputs.repos }}
+
+  check-prs:
+#    needs: [ get-org-repos ]
+    runs-on: ubuntu-latest
+#    strategy:
+#      matrix:
+#        repo: ${{ fromJson(needs.get-org-repos.outputs.repos) }}
+#      fail-fast: false
+    outputs:
+      prs: ${{ steps.dependabot-prs.outputs.prs }}
+    steps:
+      - name: Get Dependabot PRs
+        id: dependabot-prs
+        run: |
+          echo "prs=$(gh pr list -R tiki/core-iceberg-metadata -A app/dependabot --json title,url)" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ secrets.GH_PROJECT_PAT }}
+
+  create-issue:
+    needs: [check-prs]
+    if: ${{ needs.check-prs.outputs.prs != '[]' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Table
+        uses: buildingcash/json-to-markdown-table-action@v1
+        id: table
+        with:
+          json: ${{ needs.check-prs.outputs.prs }}
+
+      - name: Create issue
+        uses: dacbd/create-issue-action@main
+        id: new-issue
+        with:
+          token: ${{ secrets.GH_PROJECT_PAT }}
+          title: Review Dependabot PR
+          body: ${{ steps.table.outputs.table }}
+          labels: chore
+          repo: core-iceberg-metadata
+          owner: tiki
