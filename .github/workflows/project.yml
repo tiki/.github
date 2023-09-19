@@ -33,7 +33,7 @@ jobs:
         id: add-project
 
       - name: Set In Progress
-        if: github.event.pull_request.requested_reviewers == null
+        if: ${{ github.event.pull_request.requested_reviewers == null || github.event.pull_request.draft == true }}
         uses: titoportas/update-project-fields@v0.1.0
         with:
           project-url: https://github.com/orgs/tiki/projects/1
