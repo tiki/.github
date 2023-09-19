@@ -44,6 +44,7 @@ jobs:
           body: ${{ steps.table.outputs.body }}
           labels: chore
           repo: core-iceberg-metadata
+          owner: tiki
 
       - name: Issue Number
         id: issue-number
