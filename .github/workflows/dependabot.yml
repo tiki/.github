@@ -62,7 +62,7 @@ jobs:
       - name: Issue Number
         id: issue-number
         run: |
-          echo "${{ steps.new-issue.outputs.json }}" | jq
+          echo ${{ steps.new-issue.outputs.number }}
 
 #      - name: Add to project
 #        uses: monry/actions-add-issue-to-project@v2
