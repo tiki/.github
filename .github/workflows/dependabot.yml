@@ -42,7 +42,7 @@ jobs:
         uses: dacbd/create-issue-action@main
         id: new-issue
         with:
-          token: ${{ github.token }}
+          token: ${{ secrets.GH_PROJECT_PAT }}
           title: Review Dependabot PR
           body: ${{ steps.table.outputs.body }}
           labels: chore
