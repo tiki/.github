@@ -2,6 +2,9 @@ name: Dependabot
 
 on: push
 
+permissions:
+  issues: write
+
 jobs:
 #  get-org-repos:
 #    runs-on: ubuntu-latest
