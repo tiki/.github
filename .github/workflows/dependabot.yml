@@ -43,10 +43,7 @@ jobs:
         uses: buildingcash/json-to-markdown-table-action@v1
         id: table
         with:
-          json: ${{ fromJson(needs.check-prs.outputs.prs) }}
-
-      - name: Print Table
-        run: echo ${{ steps.table.outputs.body }}
+          json: ${{ needs.check-prs.outputs.prs }}
 
       - name: Create issue
         uses: dacbd/create-issue-action@main
@@ -54,11 +51,11 @@ jobs:
         with:
           token: ${{ secrets.GH_PROJECT_PAT }}
           title: Review Dependabot PR
-          body: ${{ steps.table.outputs.body }}
+          body: ${{ steps.table.outputs.table }}
           labels: chore
           repo: core-iceberg-metadata
           owner: tiki
-          
+
       - name: Add to project
         uses: monry/actions-add-issue-to-project@v2
         with:
