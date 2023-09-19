@@ -34,9 +34,10 @@ jobs:
       - name: Create Body
         if: ${{ steps.dependabot-prs.outputs.prs != '[]' }}
         run: |
-          for value in ${{ fromJson(steps.dependabot-prs.outputs.prs) }}
+          echo ${{ steps.dependabot-prs.outputs.prs }}
+          for i in "${{ fromJson(steps.dependabot-prs.outputs.prs) }}"
           do
-            echo $value['title']: $value['url']
+            echo "$i"
           done
 
 #  create-issue:
