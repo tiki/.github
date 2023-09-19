@@ -23,7 +23,7 @@ jobs:
         value: ${{fromJSON(needs.setup.outputs.repos)}}
     steps:
       - run: |
-          echo "${{ repos.value }}"
+          echo "${{ matrix.value }}"
 
 #  create-issue:
 #    if: ${{ github.event_name == 'pull_request' && needs.check-dependabot.outputs.dependabot == 'true'}}
