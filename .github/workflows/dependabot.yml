@@ -31,10 +31,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
 
-      - name: If Dependabot
+      - name: Create Body
         if: ${{ steps.dependabot-prs.outputs.prs != '[]' }}
         run: |
-          echo ${{ fromJson(steps.dependabot-prs.outputs.prs) }}
+          for value in ${{ fromJson(steps.dependabot-prs.outputs.prs) }}
+          do
+            echo $value
+          done
 
 #  create-issue:
 #    if: ${{ github.event_name == 'pull_request' && needs.check-dependabot.outputs.dependabot == 'true'}}
