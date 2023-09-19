@@ -20,7 +20,7 @@ jobs:
           fi
 
   add-pr:
-    if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' && needs.check-secret.outputs.pat == 'true'}}
+    if: ${{ github.event_name == 'pull_request' && needs.check-secret.outputs.pat == 'true'}}
     name: Add pull request to project
     runs-on: ubuntu-latest
     needs: [check-secret]
