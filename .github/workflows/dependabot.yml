@@ -2,9 +2,6 @@ name: Dependabot
 
 on: push
 
-env:
-  ORG: tiki
-
 jobs:
   get-org-repos:
     runs-on: ubuntu-latest
@@ -12,12 +9,12 @@ jobs:
       - uses: austenstone/get-org-repos@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          org: ${{ env.ORG }}
+          org: ${{ github.context.repo.owner }}
         id: get-org-repos
     outputs:
       repos: ${{ steps.get-org-repos.outputs.repos }}
 
-  build:
+  create-issues:
     needs: [ get-org-repos ]
     runs-on: ubuntu-latest
     strategy:
@@ -27,7 +24,7 @@ jobs:
     steps:
       - name: Get Dependabot PRs
         id: dependabot-prs
-        run: echo "prs=$(gh pr list -R ${{ env.ORG }}/${{ matrix.repo }} -A app/dependabot --json title,url)" >> $GITHUB_OUTPUT
+        run: echo "prs=$(gh pr list -R ${{ github.context.repo.owner }}/${{ matrix.repo }} -A app/dependabot --json title,url)" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ github.token }}
 
@@ -38,22 +35,26 @@ jobs:
         with:
           json: ${{ steps.dependabot-prs.outputs.prs }}
 
-      - run: |
-          echo ${{ steps.table.outputs.body }}
+      - name: Create issue
+        uses: dacbd/create-issue-action@main
+        id: new-issue
+        with:
+          token: ${{ github.token }}
+          title: Review Dependabot PR
+          body: ${{ steps.table.outputs.body }}
+          labels: chore
+          repo: ${{ matrix.repo }}
 
-#  create-issue:
-#    if: ${{ github.event_name == 'pull_request' && needs.check-dependabot.outputs.dependabot == 'true'}}
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
-#      - name: Open issue
-#        env:
-#          pr_title: ${{github.event.pull_request.title}}
-#          pr_number: ${{github.event.pull_request.number}}
-#          pr_url: ${{github.event.pull_request.url}}
-#          issue_labels: chore
-#          gh_project:
-#        run: |
-#          title="$pr_title (#$pr_number)"
-#          body="Dependabot has opened PR: $pr_url"
-#          gh issue create --title "$title" --body "$body" --label "issue_labels" --project
+      - name: Issue Number
+        id: issue-number
+        run: |
+          echo "number=$(${{ steps.new-issue.outputs.json }} | jq .number)" >> $GITHUB_OUTPUT
+
+      - name: Add to project
+        uses: monry/actions-add-issue-to-project@v2
+        with:
+          github-token: ${{ secrets.GH_PROJECT_PAT }}
+          project-owner: ${{ github.context.repo.owner }}
+          project-number: 1
+          issue-repository: ${{ matrix.repo }}
+          issue-number: ${{ steps.issue-number.outputs.number }}
