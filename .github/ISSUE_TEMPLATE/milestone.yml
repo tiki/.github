@@ -25,7 +25,6 @@ body:
       label: Issues
       description: Add all issues required to complete the milestone as a task list.
       value: |
-        # Issues:
         - [ ] tiki/<repository_name>#<issue number>
     validations:
       required: true
