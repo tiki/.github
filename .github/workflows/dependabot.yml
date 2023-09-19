@@ -35,8 +35,8 @@ jobs:
         if: ${{ steps.dependabot-prs.outputs.prs != '[]' }}
         shell: bash
         run: |
-          for run in {1..3}; do
-            echo "$run";
+          for i in ${{ fromJson(steps.dependabot-prs.outputs.prs) }}; do
+            echo ${i[0]};
           done
 
 #  create-issue:
