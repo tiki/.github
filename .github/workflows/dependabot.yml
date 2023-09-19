@@ -38,11 +38,7 @@ jobs:
           json=${{ fromJson(steps.dependabot-prs.outputs.prs) }}
           for i in "${json[@]}"
           do
-            for j in ${i[@]}
-            do
-              echo "$j"
-              echo "sup"
-            done
+              echo ${{ toJson($i) }}
           done
 
 #  create-issue:
