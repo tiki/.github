@@ -33,11 +33,10 @@ jobs:
 
       - name: Create Body
         if: ${{ steps.dependabot-prs.outputs.prs != '[]' }}
-        shell: bash
         run: |
-          echo ${{ steps.dependabot-prs.outputs.prs }}
-          for i in "${{ fromJson(steps.dependabot-prs.outputs.prs) }}"; do
-            echo "$i";
+          for i in "${{ fromJson(steps.dependabot-prs.outputs.prs) }}"
+          do
+            echo "$i['title']" - "$i['url']"
           done
 
 #  create-issue:
