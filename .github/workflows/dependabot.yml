@@ -17,13 +17,15 @@ jobs:
 #    outputs:
 #      repos: ${{ steps.get-org-repos.outputs.repos }}
 
-  create-issues:
+  check-prs:
 #    needs: [ get-org-repos ]
     runs-on: ubuntu-latest
 #    strategy:
 #      matrix:
 #        repo: ${{ fromJson(needs.get-org-repos.outputs.repos) }}
 #      fail-fast: false
+    outputs:
+      prs: ${{ steps.dependabot-prs.outputs.prs }}
     steps:
       - name: Get Dependabot PRs
         id: dependabot-prs
@@ -31,12 +33,18 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
 
+  create-issue:
+    if: ${{ steps.dependabot-prs.outputs.prs != '[]' }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Create Table
-        if: ${{ steps.dependabot-prs.outputs.prs != '[]' }}
         uses: buildingcash/json-to-markdown-table-action@v1
         id: table
         with:
           json: ${{ steps.dependabot-prs.outputs.prs }}
+
+      - name: Print Table
+        run: echo ${{ steps.table.outputs.body }}
 
       - name: Create issue
         uses: dacbd/create-issue-action@main
@@ -52,13 +60,13 @@ jobs:
       - name: Issue Number
         id: issue-number
         run: |
-          echo "number=$(${{ steps.new-issue.outputs.json }} | jq .number)" >> $GITHUB_OUTPUT
+          echo "${{ steps.new-issue.outputs.json }}" | jq
 
-      - name: Add to project
-        uses: monry/actions-add-issue-to-project@v2
-        with:
-          github-token: ${{ secrets.GH_PROJECT_PAT }}
-          project-owner: ${{ github.context.repo.owner }}
-          project-number: 1
-          issue-repository: core-iceberg-metadata
-          issue-number: ${{ steps.issue-number.outputs.number }}
+#      - name: Add to project
+#        uses: monry/actions-add-issue-to-project@v2
+#        with:
+#          github-token: ${{ secrets.GH_PROJECT_PAT }}
+#          project-owner: ${{ github.context.repo.owner }}
+#          project-number: 1
+#          issue-repository: core-iceberg-metadata
+#          issue-number: ${{ steps.issue-number.outputs.number }}
