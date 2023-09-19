@@ -36,7 +36,7 @@ jobs:
         shell: bash
         run: |
           for i in ${{ fromJson(steps.dependabot-prs.outputs.prs) }}; do
-            echo ${i[0]};
+            echo ${i.title};
           done
 
 #  create-issue:
