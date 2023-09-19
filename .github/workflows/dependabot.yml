@@ -55,12 +55,3 @@ jobs:
           labels: chore
           repo: core-iceberg-metadata
           owner: tiki
-
-      - name: Add to project
-        uses: monry/actions-add-issue-to-project@v2
-        with:
-          github-token: ${{ secrets.GH_PROJECT_PAT }}
-          project-owner: tiki
-          project-number: 1
-          issue-repository: core-iceberg-metadata
-          issue-number: ${{ steps.new-issue.outputs.number }}
