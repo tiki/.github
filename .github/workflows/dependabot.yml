@@ -3,28 +3,28 @@ name: Dependabot
 on: push
 
 jobs:
-  get-org-repos:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: austenstone/get-org-repos@main
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          org: ${{ github.context.repo.owner }}
-        id: get-org-repos
-    outputs:
-      repos: ${{ steps.get-org-repos.outputs.repos }}
+#  get-org-repos:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: austenstone/get-org-repos@main
+#        with:
+#          github-token: ${{ secrets.GITHUB_TOKEN }}
+#          org: ${{ github.context.repo.owner }}
+#        id: get-org-repos
+#    outputs:
+#      repos: ${{ steps.get-org-repos.outputs.repos }}
 
   create-issues:
-    needs: [ get-org-repos ]
+#    needs: [ get-org-repos ]
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        repo: ${{ fromJson(needs.get-org-repos.outputs.repos) }}
-      fail-fast: false
+#    strategy:
+#      matrix:
+#        repo: ${{ fromJson(needs.get-org-repos.outputs.repos) }}
+#      fail-fast: false
     steps:
       - name: Get Dependabot PRs
         id: dependabot-prs
-        run: echo "prs=$(gh pr list -R ${{ github.context.repo.owner }}/${{ matrix.repo }} -A app/dependabot --json title,url)" >> $GITHUB_OUTPUT
+        run: echo "prs=$(gh pr list -R ${{ github.context.repo.owner }}/core-iceberg-metadata -A app/dependabot --json title,url)" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ github.token }}
 
@@ -43,7 +43,7 @@ jobs:
           title: Review Dependabot PR
           body: ${{ steps.table.outputs.body }}
           labels: chore
-          repo: ${{ matrix.repo }}
+          repo: core-iceberg-metadata
 
       - name: Issue Number
         id: issue-number
@@ -56,5 +56,5 @@ jobs:
           github-token: ${{ secrets.GH_PROJECT_PAT }}
           project-owner: ${{ github.context.repo.owner }}
           project-number: 1
-          issue-repository: ${{ matrix.repo }}
+          issue-repository: core-iceberg-metadata
           issue-number: ${{ steps.issue-number.outputs.number }}
