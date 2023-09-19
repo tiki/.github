@@ -1,0 +1,43 @@
+name: Dependabot
+
+on: push
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      repos: ${{ steps.get_org_repos.outputs.repositories_json }}
+    steps:
+      - name: Get Organization Repositories
+        id: get_org_repos
+        uses: firenza/get-organization-repositories@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          organization: 'tiki'
+
+  build:
+    needs: [ setup ]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        value: ${{fromJSON(needs.setup.outputs.repos)}}
+    steps:
+      - run: |
+          echo "${{ repos.value }}"
+
+#  create-issue:
+#    if: ${{ github.event_name == 'pull_request' && needs.check-dependabot.outputs.dependabot == 'true'}}
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      - name: Open issue
+#        env:
+#          pr_title: ${{github.event.pull_request.title}}
+#          pr_number: ${{github.event.pull_request.number}}
+#          pr_url: ${{github.event.pull_request.url}}
+#          issue_labels: chore
+#          gh_project:
+#        run: |
+#          title="$pr_title (#$pr_number)"
+#          body="Dependabot has opened PR: $pr_url"
+#          gh issue create --title "$title" --body "$body" --label "issue_labels" --project
