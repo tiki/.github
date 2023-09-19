@@ -41,6 +41,7 @@ jobs:
             for j in ${i[@]}
             do
               echo "$j"
+              echo "sup"
             done
           done
 
