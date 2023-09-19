@@ -36,11 +36,9 @@ jobs:
         shell: bash
         run: |
           json=${{ fromJson(steps.dependabot-prs.outputs.prs) }}
-          echo "WTF ${json[*]}"
-
-#          for i in ${{ fromJson(steps.dependabot-prs.outputs.prs) }}; do
-#            echo ${i.title};
-#          done
+          for i in "${json[@]}"; do
+            echo "${i}";
+          done
 
 #  create-issue:
 #    if: ${{ github.event_name == 'pull_request' && needs.check-dependabot.outputs.dependabot == 'true'}}
