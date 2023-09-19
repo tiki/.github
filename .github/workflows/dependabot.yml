@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Get Dependabot PRs
         id: dependabot-prs
-        run: echo "prs=$(gh pr list -R ${{ github.context.repo.owner }}/core-iceberg-metadata -A app/dependabot --json title,url)" >> $GITHUB_OUTPUT
+        run: echo "prs=$(gh pr list -R tiki/core-iceberg-metadata -A app/dependabot --json title,url)" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ github.token }}
 
