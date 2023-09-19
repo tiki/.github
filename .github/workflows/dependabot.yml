@@ -36,7 +36,7 @@ jobs:
         shell: bash
         run: |
           json=${{ fromJson(steps.dependabot-prs.outputs.prs) }}
-          echo json[0].title
+          echo "$json[0].title"
 
 #          for i in ${{ fromJson(steps.dependabot-prs.outputs.prs) }}; do
 #            echo ${i.title};
