@@ -32,6 +32,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
 
       - name: Create Body
+        if: ${{ steps.dependabot-prs.outputs.prs != '[]' }}
         uses: buildingcash/json-to-markdown-table-action@v1
         id: body
         with:
