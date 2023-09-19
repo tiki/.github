@@ -3,27 +3,26 @@ name: Dependabot
 on: push
 
 jobs:
-  setup:
+  get-org-repos:
     runs-on: ubuntu-latest
-    outputs:
-      repos: ${{ steps.get_org_repos.outputs.repositories_json }}
     steps:
-      - name: Get Organization Repositories
-        id: get_org_repos
-        uses: firenza/get-organization-repositories@v1
+      - uses: austenstone/get-org-repos@main
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          organization: 'tiki'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          org: tiki
+        id: get-org-repos
+    outputs:
+      repos: ${{ steps.get-org-repos.outputs.repos }}
 
   build:
-    needs: [ setup ]
+    needs: [ get-org-repos ]
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        value: ${{fromJSON(needs.setup.outputs.repos)}}
+        repo: ${{ fromJson(needs.get-org-repos.outputs.repos) }}
+      fail-fast: false
     steps:
-      - run: |
-          echo "${{ matrix.value }}"
+      - run: echo "Hello ${{ matrix.repo }}!"
 
 #  create-issue:
 #    if: ${{ github.event_name == 'pull_request' && needs.check-dependabot.outputs.dependabot == 'true'}}
