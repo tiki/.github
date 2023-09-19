@@ -36,7 +36,7 @@ jobs:
         run: |
           for value in ${{ fromJson(steps.dependabot-prs.outputs.prs) }}
           do
-            echo $value
+            echo $value['title']: $value['url']
           done
 
 #  create-issue:
