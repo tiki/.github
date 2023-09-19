@@ -30,8 +30,11 @@ jobs:
         run: echo "prs=$(gh pr list -R ${{ env.ORG }}/${{ matrix.repo }} -A app/dependabot --json title,url)" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ github.token }}
-      - run: |
-          echo ${{ steps.dependabot-prs.outputs.prs }}
+
+      - name: If Dependabot
+        if: ${{ steps.dependabot-prs.outputs.prs != '[]' }}
+        run: |
+          echo ${{ fromJson(steps.dependabot-prs.outputs.prs) }}
 
 #  create-issue:
 #    if: ${{ github.event_name == 'pull_request' && needs.check-dependabot.outputs.dependabot == 'true'}}
