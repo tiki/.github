@@ -41,3 +41,13 @@ jobs:
           item-id: ${{ steps.add-project.outputs.itemId }}
           field-keys: Status
           field-values: In Progress
+
+      - name: Set In Review
+        if: ${{ github.event.pull_request.requested_reviewers != null && github.event.pull_request.draft == false }}
+        uses: titoportas/update-project-fields@v0.1.0
+        with:
+          project-url: https://github.com/orgs/tiki/projects/1
+          github-token: ${{ secrets.GH_PROJECT_PAT }}
+          item-id: ${{ steps.add-project.outputs.itemId }}
+          field-keys: Status
+          field-values: In Review
