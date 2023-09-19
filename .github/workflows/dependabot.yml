@@ -26,7 +26,7 @@ jobs:
         id: dependabot-prs
         run: echo "prs=$(gh pr list -R tiki/core-iceberg-metadata -A app/dependabot --json title,url)" >> $GITHUB_OUTPUT
       - run: |
-          echo ${{ fromJson(steps.dependabot-prs.outputs.prs) }}
+          echo ${{ steps.dependabot-prs.outputs.prs }}
 
 #  create-issue:
 #    if: ${{ github.event_name == 'pull_request' && needs.check-dependabot.outputs.dependabot == 'true'}}
