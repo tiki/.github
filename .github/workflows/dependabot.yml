@@ -34,7 +34,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
 
   create-issue:
-    if: ${{ steps.dependabot-prs.outputs.prs != '[]' }}
+    needs: [check-prs]
+    if: ${{ needs.check-prs.outputs.prs != '[]' }}
     runs-on: ubuntu-latest
     steps:
       - name: Create Table
