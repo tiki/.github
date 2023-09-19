@@ -37,18 +37,15 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_PROJECT_PAT }}
 
-  create-issue:
-    needs: [check-prs]
-    if: ${{ needs.check-prs.outputs.prs != '[]' }}
-    runs-on: ubuntu-latest
-    steps:
       - name: Create Table
+        if: ${{ steps.dependabot-prs.outputs.prs != '[]' }}
         uses: buildingcash/json-to-markdown-table-action@v1
         id: table
         with:
-          json: ${{ needs.check-prs.outputs.prs }}
+          json: ${{ steps.dependabot-prs.outputs.prs }}
 
       - name: Create issue
+        if: ${{ steps.dependabot-prs.outputs.prs != '[]' }}
         uses: dacbd/create-issue-action@main
         id: new-issue
         with:
