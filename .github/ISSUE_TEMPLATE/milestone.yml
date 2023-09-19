@@ -3,7 +3,7 @@ description: Create a new milestone
 title: "[Milestone Name]"
 projects: ["tiki/1"]
 labels:
-  - ms
+  - milestone
 assignees:
   - timoguin
 body:

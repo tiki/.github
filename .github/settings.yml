@@ -71,7 +71,7 @@ labels:
   - name: late
     color: FBCA04
     description: The milestone is behind schedule.
-  - name: ms
+  - name: milestone
     color: FFFFFF
     description: This issue is a milestone.
 
