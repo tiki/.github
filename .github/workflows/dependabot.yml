@@ -32,14 +32,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
 
       - name: Create Body
-        if: ${{ steps.dependabot-prs.outputs.prs != '[]' }}
-        shell: bash
-        run: |
-          json=${{ fromJson(steps.dependabot-prs.outputs.prs) }}
-          for i in "${json[@]}"
-          do
-              echo ${{ toJson($i) }}
-          done
+        uses: buildingcash/json-to-markdown-table-action@v1
+        id: body
+        with:
+          json: ${{ fromJson(steps.dependabot-prs.outputs.prs) }}
+
+      - run: |
+          echo ${{ steps.table.outputs.body }}
 
 #  create-issue:
 #    if: ${{ github.event_name == 'pull_request' && needs.check-dependabot.outputs.dependabot == 'true'}}
