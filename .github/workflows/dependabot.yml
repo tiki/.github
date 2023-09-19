@@ -2,6 +2,9 @@ name: Dependabot
 
 on: push
 
+env:
+  ORG: tiki
+
 jobs:
   get-org-repos:
     runs-on: ubuntu-latest
@@ -9,7 +12,7 @@ jobs:
       - uses: austenstone/get-org-repos@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          org: tiki
+          org: $ORG
         id: get-org-repos
     outputs:
       repos: ${{ steps.get-org-repos.outputs.repos }}
@@ -24,7 +27,7 @@ jobs:
     steps:
       - name: Get Dependabot PRs
         id: dependabot-prs
-        run: echo "prs=$(gh pr list -R tiki/core-iceberg-metadata -A app/dependabot --json title,url)" >> $GITHUB_OUTPUT
+        run: echo "prs=$(gh pr list -R $ORG/${{ matrix.repo }} -A app/dependabot --json title,url)" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ github.token }}
       - run: |
