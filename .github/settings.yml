@@ -1,12 +1,11 @@
 # Reference: https://github.com/repository-settings/app
 
 repository:
-  private: false
-  has_issues: true
+  has_issues: false
   has_projects: false
-  has_wiki: false
   has_discussions: false
-  has_downloads: true
+  has_wiki: false
+  has_downloads: false
   default_branch: main
   allow_squash_merge: true
   allow_merge_commit: true
@@ -16,28 +15,20 @@ repository:
   enable_vulnerability_alerts: true
 
 teams:
-  - name: infrastructure
+  - name: sysadmin
     permission: admin
+  - name: engineering
+    permission: push
+  - name: product
+    permission: triage
 
 labels:
   - name: breaking
     color: D73A4A
     description: Introduces a breaking change.
-  - name: 'good first issue'
-    color: 7057FF
-    description: Good for newcomers.
-  - name: help
-    color: 0E8A16
-    description: Requires help to resolve.
-  - name: 'priority: now'
+  - name: critical
     color: D73A4A
     description: Stop what you're doing and fix it, now.
-  - name: 'priority: soon'
-    color: FFB8C6
-    description: Critical, requires work ASAP.
-  - name: 'priority: 2day'
-    color: FBCA04
-    description: Priority this task above others.
   - name: blocked
     color: D73A4A
     description: Something is blocking this.
@@ -47,9 +38,6 @@ labels:
   - name: chore
     color: FEF2C0
     description: Naming, organizing folder structure, and less impactful tasks.
-  - name: discuss
-    color: D4C5F9
-    description: Questions, proposals and info that requires discussion.
   - name: docs
     color: FEF2C0
     description: Related to documentation and information.
@@ -66,36 +54,42 @@ labels:
     color: 64CFDB
     description: Related to testing.
   - name: duplicate
-    color: CFD3D7
-    description: This issue or pull request already exists.
-  - name: late
-    color: FBCA04
-    description: The milestone is behind schedule.
-  - name: milestone
     color: FFFFFF
-    description: This issue is a milestone.
+    description: This issue or pull request already exists.
+  - name: invalid
+    color: FFFFFF
+    description: Not a valid issue. It likely belongs in discussions.
+  - name: story
+    color: FFFFFF
+    description: For project tracking only. This issue is a User Story.
+  - name: task
+    color: FFFFFF
+    description: For project tracking only. This issue is a Task for a User Story.
 
 branches:
   - name: main
     protection:
       allow_deletions: false
       allow_force_pushes: false
-      allow_fork_syncing: null # Only applies to fork repos
+      allow_fork_syncing: false
       block_creations: true
-      enforce_admins: true
+      enforce_admins: false
       lock_branch: false
       required_conversation_resolution: true
       required_linear_history: false
       required_status_checks:
         strict: true
-        contexts: [] # TODO: Add required status checks here
+        contexts: []
       required_pull_request_reviews:
         dismissal_restrictions:
-          teams: ["infrastructure"]
+          teams: ["sysadmin"]
         dismiss_stale_reviews: true
         require_code_owner_reviews: true
         require_last_push_approval: true
         required_approving_review_count: 1
-        bypass_pull_request_allowances: null
       restrictions: null
 
+environments:
+  - name: production
+    deployment_branch_policy:
+      protected_branches: true
