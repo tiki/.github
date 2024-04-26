@@ -1,0 +1,42 @@
+engineering:
+  description: Do you even code, bro?
+  members:
+    - github: mike-audi
+    - github: JesseMonteiro
+    - github: MatthewGleeson
+    - github: MiroBenicio
+    - github: ricardobrg
+    - github: Schuler-Gabriel
+    - github: timoguin
+
+product:
+  description: No nerds allowed.
+  members:
+    - github: mike-audi
+    - github: BOC111
+    - github: sfaria27
+
+backend:
+  description: Those who build the infrastructure.
+  parent: engineering
+  parentSlug: engineering
+  members:
+    - github: mike-audi
+    - github: ricardobrg
+
+frontend:
+  description: Those who build the tools customers touch.
+  parent: engineering
+  parentSlug: engineering
+  members:
+    - github: JesseMonteiro
+    - github: MiroBenicio
+    - github: ricardobrg
+    - github: Schuler-Gabriel
+
+sysadmin:
+  description: Approval escalation and monitoring.
+  parent: engineering
+  parentSlug: engineering
+  members:
+    - github: mike-audi
