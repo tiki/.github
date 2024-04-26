@@ -26,12 +26,8 @@ You can read more about this feature in GitHub's code security docs[^1].
 
 ### Email
 
-The security team can be contacted via email at security at mytiki dot com.
-
-### Discord
-
-You can join our [Discord community](https://discord.gg/tiki) and reach out to any of
-the TIKI staff.
+If you are unable to report a vulnerability via the `Security` tab, the team can 
+be contacted via email at [hello@mytiki.com](mailto:hello@mytiki.com).
 
 <!-- Footnotes -->
 
