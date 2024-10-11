@@ -1,0 +1,29 @@
+name: Deliverable
+description: Advanced! Leave this to the maintainers.
+labels:
+  - deliverable
+projects: ["tiki/9"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Time to get technical.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the work with enough detail that someone else can understand what needs to be done.
+    validations:
+      required: true
+  - type: textarea
+    id: criteria
+    attributes:
+      label: Tasks
+      description: Add all tasks that belong to this deliverable.
+      placeholder: |
+        - [ ] #123
+        - [ ] #456
+        - [ ] tiki/other-repository/task#789
+        - [ ] A task that don't belong to any repo
+    validations:
+      required: true
