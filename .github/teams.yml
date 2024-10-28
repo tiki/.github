@@ -10,6 +10,7 @@ frontend:
   members:
     - github: MiroBenicio
     - github: ricardobrg
+    - github: juan-alencar
 
 sysadmin:
   description: Approval escalation and monitoring.
