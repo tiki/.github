@@ -4,6 +4,7 @@ backend:
     - github: mike-audi
     - github: ricardobrg
     - github: TarsioGomides
+    - github: barbarabr1to
 
 frontend:
   description: Those who build the tools customers touch.
