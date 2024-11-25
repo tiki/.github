@@ -17,10 +17,10 @@ repository:
 teams:
   - name: sysadmin
     permission: admin
-  - name: engineering
+  - name: backend
     permission: push
-  - name: product
-    permission: triage
+  - name: frontend
+    permission: push
 
 labels:
   - name: blocked
