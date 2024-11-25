@@ -1,9 +1,18 @@
+data:
+  description: Those who build the data pipelines.
+  members:
+    - github: mike-audi
+    - github: ricardobrg
+    - github: mariananunes-data
+
 backend:
   description: Those who build the infrastructure.
   members:
     - github: mike-audi
     - github: ricardobrg
     - github: TarsioGomides
+    - github: barbarabr1to
+    - github: MiroBenicio
 
 frontend:
   description: Those who build the tools customers touch.
