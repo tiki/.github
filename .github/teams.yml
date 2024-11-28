@@ -1,28 +1,28 @@
-data:
-  description: Those who build the data pipelines.
+backend:
+  description: The engineers who build the systems that keep everything running, even if no one sees them or says thanks.
   members:
-    - github: mike-audi
-    - github: ricardobrg
+    - github: TarsioGomides
+    - github: MiroBenicio
+
+data:
+  description: The data plumbers, tidying up messy datasets and making sure everything flows in neat, organized rows.
+  members:
     - github: mariananunes-data
 
-backend:
-  description: Those who build the infrastructure.
-  members:
-    - github: mike-audi
-    - github: ricardobrg
-    - github: TarsioGomides
-    - github: barbarabr1to
-    - github: MiroBenicio
-
 frontend:
-  description: Those who build the tools customers touch.
+  description: The creators of the tools customers love, making sure every click feels seamless.
   members:
     - github: MiroBenicio
-    - github: ricardobrg
     - github: juan-alencar
 
-sysadmin:
-  description: Approval escalation and monitoring.
+infrastructure:
+  description: Digital construction crew, building the foundation and deciphering AWS docs.
+  members:
+    - github: TarsioGomides
+    - github: barbarabr1to
+
+architecture:
+  description: The architects and gatekeepers, designing what others build and making sure it all runs smoothly—while they figure out how to build it.
   members:
     - github: mike-audi
     - github: ricardobrg
