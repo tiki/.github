@@ -24,6 +24,6 @@ body:
         - [ ] #123
         - [ ] #456
         - [ ] tiki/other-repository/task#789
-        - [ ] A task that don't belong to any repo
+        - [ ] A task that isn’t associated with any repository.
     validations:
       required: true

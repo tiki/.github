@@ -15,11 +15,15 @@ repository:
   enable_vulnerability_alerts: true
 
 teams:
-  - name: sysadmin
+  - name: architecture
     permission: admin
   - name: backend
     permission: push
+  - name: data
+    permission: push
   - name: frontend
+    permission: push
+  - name: infrastructure
     permission: push
 
 labels:
@@ -38,6 +42,9 @@ labels:
   - name: deliverable
     color: 326223
     description: This issue is a Deliverable. It should have a list of tasks that need to be completed.
+  - name: data sample
+    color: 5319E7
+    description: This is a data sample from a client that requires processing.
 
 branches:
   - name: main
