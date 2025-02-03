@@ -1,8 +1,8 @@
 backend:
   description: The engineers who build the systems that keep everything running, even if no one sees them or says thanks.
   members:
-    - github: TarsioGomides
     - github: MiroBenicio
+    - github: juan-alencar
 
 data:
   description: The data plumbers, tidying up messy datasets and making sure everything flows in neat, organized rows.
@@ -18,7 +18,6 @@ frontend:
 infrastructure:
   description: Digital construction crew, building the foundation and deciphering AWS docs.
   members:
-    - github: TarsioGomides
     - github: barbarabr1to
 
 architecture:
