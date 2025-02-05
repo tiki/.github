@@ -77,15 +77,14 @@ environments:
   - name: staging
     deployment_branch_policy:
       protected_branches: true
-  
-
+ 
 labels:
   - name: release
     color: 326223
     description: This issue is a Release. It should have a list of deliverables that will be released once it is merged.
   - name: feature
     color: 5EBEFF
-    description: A feature deliverable. Brand new functionality, features, pages, workflows, endpoints, etc. Corresponds to a minor version.
+    description: A feature deliverable. Brand new functionality. Corresponds to a minor version.
   - name: fix
     color: 91CA55
     description: A fix deliverable. Iterations on existing features or infrastructure. Corresponds to a patch version.  
@@ -93,7 +92,7 @@ labels:
     description: A code change that neither fixes a bug nor adds a feature. 
     color: 19e7cf
   - name: ci
-    color: 5319E7
+    color: 5319E8
     description: Continuous Integration tasks.
   - name: chore
     color: 497E76
