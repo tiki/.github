@@ -26,26 +26,6 @@ teams:
   - name: infrastructure
     permission: push
 
-labels:
-  - name: blocked
-    color: D73A4A
-    description: Something is blocking this.
-  - name: feature
-    color: 5EBEFF
-    description: Brand new functionality, features, pages, workflows, endpoints, etc.
-  - name: fix
-    color: 91CA55
-    description: Iterations on existing features or infrastructure.
-  - name: task
-    color: FFFFFF
-    description: For project tracking only. This issue is a Task for a Deliverable.
-  - name: deliverable
-    color: 326223
-    description: This issue is a Deliverable. It should have a list of tasks that need to be completed.
-  - name: data sample
-    color: 5319E7
-    description: This is a data sample from a client that requires processing.
-
 branches:
   - name: main
     protection:
@@ -68,8 +48,65 @@ branches:
         require_last_push_approval: true
         required_approving_review_count: 1
       restrictions: null
+  - name: develop
+    protection:
+      allow_deletions: false
+      allow_force_pushes: false
+      allow_fork_syncing: false
+      block_creations: false
+      enforce_admins: false
+      lock_branch: false
+      required_conversation_resolution: false
+      required_linear_history: false
+      required_status_checks:
+        strict: true
+        contexts: []
+      required_pull_request_reviews:
+        dismissal_restrictions:
+          teams: ["sysadmin"]
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: true
+        require_last_push_approval: true
+        required_approving_review_count: 1
+      restrictions: null 
 
 environments:
   - name: production
     deployment_branch_policy:
       protected_branches: true
+  - name: staging
+    deployment_branch_policy:
+      protected_branches: true
+  
+
+labels:
+  - name: release
+    color: 326223
+    description: This issue is a Release. It should have a list of deliverables that will be released once it is merged.
+  - name: feature
+    color: 5EBEFF
+    description: A feature deliverable. Brand new functionality, features, pages, workflows, endpoints, etc. Corresponds to a minor version.
+  - name: fix
+    color: 91CA55
+    description: A fix deliverable. Iterations on existing features or infrastructure. Corresponds to a patch version.  
+  - name: refactor  
+    description: A code change that neither fixes a bug nor adds a feature. 
+    color: 19e7cf
+  - name: ci
+    color: 5319E7
+    description: Continuous Integration tasks.
+  - name: chore
+    color: 497E76
+    description: Changes to the build process or auxiliary tools and libraries such as documentation generation.
+  - name: docs  
+    color: 587246
+    description: Documentation only changes.
+  - name: test  
+    color: E1CC4F
+    description: Adding missing tests.
+  - name: style
+    color: EA899A
+    description: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc).
+  - name: data
+    color: 6E5494
+    description: Changes in the data processing scripts.
