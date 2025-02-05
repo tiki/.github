@@ -81,13 +81,13 @@ environments:
 labels:
   - name: release
     color: 326223
-    description: This issue is a Release. It should have a list of deliverables that will be released once it is merged.
+    description: This issue is a Release.
   - name: feature
     color: 5EBEFF
-    description: A feature deliverable. Brand new functionality. Corresponds to a minor version.
+    description: A feature deliverable.
   - name: fix
     color: 91CA55
-    description: A fix deliverable. Iterations on existing features or infrastructure. Corresponds to a patch version.  
+    description: A fix deliverable.
   - name: refactor  
     description: A code change that neither fixes a bug nor adds a feature. 
     color: 19e7cf
@@ -96,7 +96,7 @@ labels:
     description: Continuous Integration tasks.
   - name: chore
     color: 497E76
-    description: Changes to the build process or auxiliary tools and libraries such as documentation generation.
+    description: Changes to auxiliary tools and libraries.
   - name: docs  
     color: 587246
     description: Documentation only changes.
@@ -105,7 +105,7 @@ labels:
     description: Adding missing tests.
   - name: style
     color: EA899A
-    description: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc).
+    description: Changes that do not affect the meaning of the code.
   - name: data
     color: 6E5494
     description: Changes in the data processing scripts.
