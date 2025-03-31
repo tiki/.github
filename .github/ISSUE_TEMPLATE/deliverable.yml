@@ -2,6 +2,7 @@ name: Deliverable
 description: Advanced! Leave this to the maintainers.
 labels:
   - deliverable
+type: deliverable
 projects: ["tiki/9"]
 body:
   - type: markdown
@@ -18,8 +19,8 @@ body:
   - type: textarea
     id: criteria
     attributes:
-      label: Tasks
-      description: Add all tasks that belong to this deliverable.
+      label: Acceptance Criteria
+      description: Add the user stories that belong to this deliverable.
       placeholder: |
         - [ ] #123
         - [ ] #456

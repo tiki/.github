@@ -3,6 +3,7 @@ description: Advanced! Leave this to the maintainers.
 labels:
   - task
 projects: ["tiki/9"]
+type: task
 body:
   - type: markdown
     attributes:
